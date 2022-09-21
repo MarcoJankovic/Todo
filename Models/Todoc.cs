@@ -8,26 +8,26 @@ namespace Todo.Models
 {
     internal class Todoc
     {
-        private readonly int Id;
-        private string? Description;
-        private bool Done;
+        private readonly int Id;  // Field  -- Here we declare what we are using
+        private string? Description; // Field
+        private bool Done;   // Field
 
 
-        public Todoc(int id, string description)
+        public Todoc(int id, string description)  // This is the Constructor that takes 2 arguments inside paramenters 
         {
             this.Id = id;
             Description = description;          
         }
 
-        public int id
+        public int id  // Here we declare properties
         {
-            get { return Id; }
+            get { return Id; }   // And returning value
 
         }
 
-        public string? description
+        public string? description // Here we declare properties
         {
-            get { return Description; }
+            get { return Description; }  // And returning value
             set { Description = value; }
         }
 

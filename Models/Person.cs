@@ -12,7 +12,7 @@ namespace Todo.Models
         private string? FirstName;
         private string? LastName;
 
-        public Person(int id, string firstName, string lastName)
+        public Person(int id, string firstName, string lastName)  // Constructor
 
         {
             this.Id = id;
@@ -23,7 +23,7 @@ namespace Todo.Models
 
         public int id
         {
-            get { return Id; }
+            get { return Id; }  // Readonly returns only id. No need for a set, since it's not suppose to take anything dynamicaly in.
         }
 
         public string? firstName

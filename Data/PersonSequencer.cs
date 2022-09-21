@@ -12,11 +12,11 @@ namespace Todo.Data
 
         private static int PersonId;
 
-        public static void NextPersonId()
+        public static void NextPersonId()  // Method
         {           
               PersonId++;
         }
-        public static void Reset()
+        public static void Reset()  // Method
         {
             PersonId = 0;
         }
