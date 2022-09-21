@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Todo.Models
 {
-    internal class Todo
+    internal class Todoc
     {
         private readonly int Id;
         private string? Description;
         private bool Done;
 
 
-        public Todo(int id, string description)
+        public Todoc(int id, string description)
         {
             this.Id = id;
             Description = description;          
