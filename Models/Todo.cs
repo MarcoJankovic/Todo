@@ -15,7 +15,7 @@ namespace Todo.Models
 
         public Todo(int id, string description)
         {
-            Id = id;
+            this.Id = id;
             Description = description;          
         }
 
