@@ -8,27 +8,27 @@ namespace Todo.Models
 {
     public class Person
     {
-        private readonly int Id; // field
-        private string? FirstName;
-        private string? LastName;
+        private readonly int id; // field
+        private string? firstName;
+        private string? lastName;
 
         public Person(int id, string firstName, string lastName)  // Constructor
 
         {
-            this.Id = id;
-            FirstName = firstName;
-            LastName = lastName;
+            this.id = id;
+            this.FirstName = firstName;
+            this.LastName = lastName;
 
         }
 
-        public int id
+        public int Id
         {
-            get { return Id; }  // Readonly returns only id. No need for a set, since it's not suppose to take anything dynamicaly in.
+            get { return id; }  // Readonly returns only id. No need for a set, since it's not suppose to take anything dynamicaly in.
         }
 
-        public string? firstName
+        public string? FirstName
         {
-            get { return FirstName; }
+            get { return this.firstName; }
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -37,14 +37,14 @@ namespace Todo.Models
                 }
                 else
                 {
-                    FirstName = value;
+                    this.firstName = value;
                 }
             }
         }
 
-        public string? lastName
+        public string? LastName
         {
-            get { return LastName; }
+            get { return this.lastName; }
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -53,7 +53,7 @@ namespace Todo.Models
                 }
                 else
                 {
-                    LastName = value;
+                    this.lastName = value;
                 }
             }
         }

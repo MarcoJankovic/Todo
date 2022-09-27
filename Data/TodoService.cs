@@ -43,16 +43,16 @@ namespace Todo.Data
 
         public Todoc[] FindByDoneStatus(bool doneStatus)
         {
-            Todoc[] valueDone = new Todoc[0];
+            Todoc[] statusDone = new Todoc[0];
 
             foreach (Todoc todo in todos)
             {
                 if (todo.done == doneStatus)
                 {
-                    valueDone.Append(todo);
+                    statusDone.Append(todo);
                 }
             }
-            return valueDone;
+            return statusDone;
         }
 
         public Todoc[] FindByAssignee(int personId)
