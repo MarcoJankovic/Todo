@@ -11,12 +11,12 @@ namespace Todo.Models
         private readonly int Id;  // Field  -- Here we declare what we are using
         private string? Description; // Field
         private bool Done;   // Field
+        private Person? Assignee;
 
-
-        public Todoc(int id, string description)  // This is the Constructor that takes 2 arguments inside paramenters 
+        public Todoc(int id, string? description)  // This is the Constructor that takes 2 arguments inside paramenters 
         {
             this.Id = id;
-            Description = description;          
+            Description = description;
         }
 
         public int id  // Here we declare properties
@@ -30,8 +30,15 @@ namespace Todo.Models
             get { return Description; }  // And returning value
             set { Description = value; }
         }
+        public bool done
+        {
+            get; set;
+        }
 
-
+        public Person myAssignee
+        {
+            get; set;
+        }
 
     }
 }

@@ -19,7 +19,7 @@ namespace Todo.Data
 
         public Person[] FindAll()
         {
-            // return people = new Person[0];
+            //return people = new Person[0];
             return people;
         }
 
@@ -36,7 +36,7 @@ namespace Todo.Data
         }
         public void Clear()
         {
-            people.ToList().Clear(); //
+            // people.ToList().Clear(); //
             people = new Person[0];
         }
     }
