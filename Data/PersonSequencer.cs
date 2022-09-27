@@ -20,6 +20,5 @@ namespace Todo.Data
         {
             personId = 0;
         }
-
     }
 }

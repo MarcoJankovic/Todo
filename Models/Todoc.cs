@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Todo.Models
 {
-    internal class Todoc
+    public class Todoc
     {
         private readonly int Id;  // Field  -- Here we declare what we are using
         private string? Description; // Field
