@@ -10,15 +10,15 @@ namespace Todo.Data
     public class PersonSequencer
     {
 
-        private static int PersonId;
+        private static int personId;
 
-        public static void NextPersonId()  // Method
-        {           
-              PersonId++;
+        public static int NextPersonId()  // Method
+        {
+            return personId++;
         }
         public static void Reset()  // Method
         {
-            PersonId = 0;
+            personId = 0;
         }
 
     }

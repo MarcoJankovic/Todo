@@ -12,17 +12,7 @@ namespace Todolist
     {
         static void Main(string[] args)
         {
-            Person person = new Person(10, "Marco", "Svensson");  // Here i create a new instance of object person
-
-          
-
-            Console.WriteLine(person.id);
-
-            Console.WriteLine(person.id + " " + person.firstName + " " + person.lastName);
-
-        
-
-
+       
             Console.ReadLine();
 
         }
