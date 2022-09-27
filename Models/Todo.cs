@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Todo.Models
 {
-    public class Todoc
+    public class Todo
     {
         private readonly int id;  // Field  -- Here we declare what we are using
         private string? description; // Field
         private bool done;   // Field
         private Person? assignee;
 
-        public Todoc(int id, string? description)  // This is the Constructor that takes 2 arguments inside paramenters 
+        public Todo(int id, string? description)  // This is the Constructor that takes 2 arguments inside paramenters 
         {
             this.id = id;
             Description = description;
@@ -35,7 +35,7 @@ namespace Todo.Models
             get
             {
                 return done;
-            }
+            }          
         }
 
         public Person? MyAssignee

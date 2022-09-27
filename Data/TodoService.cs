@@ -10,27 +10,27 @@ namespace Todo.Data
 {
     public class TodoService
     {
-        private static Todoc[] todos = new Todoc[0];
+        private static Models.Todo[] todos = new Models.Todo[0];
 
         public int Size()
         {
             return todos.Length;
         }
 
-        public Todoc[] FindAll()
+        public Models.Todo[] FindAll()
         {
             //return people = new Person[0];
             return todos;
         }
 
-        public Todoc FindById(int id)
+        public Models.Todo FindById(int id)
         {
             return todos[id];
         }
 
-        public Todoc CreateNewTodo(string description)
+        public Models.Todo CreateNewTodo(string description)
         {
-            Todoc newTodo = new Todoc(TodoSequencer.Todos(), description);
+            Models.Todo newTodo = new Models.Todo(TodoSequencer.Todos(), description);
             todos.Append(newTodo);
             return newTodo;
         }
@@ -38,16 +38,16 @@ namespace Todo.Data
         public void Clear()
         {
             // people.ToList().Clear(); //
-            todos = new Todoc[0];
+            todos = new Models.Todo[0];
         }
 
-        public Todoc[] FindByDoneStatus(bool doneStatus)
+        public Models.Todo[] FindByDoneStatus(bool doneStatus)
         {
-            Todoc[] statusDone = new Todoc[0];
+            Models.Todo[] statusDone = new Models.Todo[0];
 
-            foreach (Todoc todo in todos)
+            foreach (Models.Todo todo in todos)
             {
-                if (todo.done == doneStatus)
+                if (todo.Done == doneStatus)
                 {
                     statusDone.Append(todo);
                 }
@@ -55,8 +55,21 @@ namespace Todo.Data
             return statusDone;
         }
 
-        public Todoc[] FindByAssignee(int personId)
+        public Models.Todo[] FindByAssignee(Person assignee)
         {
+            Models.Todo[] assigneeArray = new Models.Todo[0];
+
+            foreach (Models.Todo todoitem in todos)
+            {
+                if(todoitem.MyAssignee == assignee)
+                {
+                    Array.Resize(ref assigneeArray, assigneeArray.Length + 1);
+                    assigneeArray[assigneeArray.Length - 1] = todoitem;
+
+                   // assigneeArray.Append(todoitem);
+                }
+            }
+            return assigneeArray;
 
         }
 
