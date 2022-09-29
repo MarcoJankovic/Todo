@@ -1,36 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
-using Todo.Data;
 using Todo.Models;
 
 namespace Todo.Data
 {
     public class TodoService
     {
-        private static Models.Todo[] todos = new Models.Todo[0];
+        private static Todoc[] todos = new Todoc[0];
 
         public int Size()
         {
             return todos.Length;
         }
 
-        public Models.Todo[] FindAll()
+        public Todoc[] FindAll()
         {
             //return people = new Person[0];
             return todos;
         }
 
-        public Models.Todo FindById(int id)
+        public Todoc FindById(int id)
         {
             return todos[id];
         }
 
-        public Models.Todo CreateNewTodo(string description)
+        public Todoc CreateNewTodo(string description)
         {
-            Models.Todo newTodo = new Models.Todo(TodoSequencer.Todos(), description);
+            var newTodo = new Todoc(TodoSequencer.Todos(), description);
             todos.Append(newTodo);
             return newTodo;
         }
@@ -38,14 +38,14 @@ namespace Todo.Data
         public void Clear()
         {
             // people.ToList().Clear(); //
-            todos = new Models.Todo[0];
+            todos = new Todoc[0];
         }
 
-        public Models.Todo[] FindByDoneStatus(bool doneStatus)
+        public Todoc[] FindByDoneStatus(bool doneStatus)
         {
-            Models.Todo[] statusDone = new Models.Todo[0];
+            Todoc[] statusDone = new Todoc[0];
 
-            foreach (Models.Todo todo in todos)
+            foreach (Todoc todo in todos)
             {
                 if (todo.Done == doneStatus)
                 {
@@ -55,24 +55,35 @@ namespace Todo.Data
             return statusDone;
         }
 
-        public Models.Todo[] FindByAssignee(Person assignee)
+        public Todoc[] FindByAssignee(Person assignee)
         {
-            Models.Todo[] assigneeArray = new Models.Todo[0];
+            Todoc[] assigneeArray = new Todoc[0];
 
-            foreach (Models.Todo todoitem in todos)
+            foreach (Todoc todoitem in todos)
             {
-                if(todoitem.MyAssignee == assignee)
+                if (todoitem.MyAssignee == assignee)
                 {
                     Array.Resize(ref assigneeArray, assigneeArray.Length + 1);
                     assigneeArray[assigneeArray.Length - 1] = todoitem;
 
-                   // assigneeArray.Append(todoitem);
                 }
             }
             return assigneeArray;
-
         }
 
+        public Todoc[] FindUnassignedTodoItems()
+        {
+            Todoc[] assigneeArray = new Todoc[0];
+
+            foreach (Todoc todoitem in todos)
+            {
+                if (todoitem == null)
+                {
+                    Array.Resize(ref assigneeArray, assigneeArray.Length);
+                }
+            }
+            return assigneeArray;
+        }
     }
 
 }

@@ -36,12 +36,11 @@ namespace Todo.Data
         }
         public void Clear()
         {
-           // people.ToList().Clear();
-           // people = new Person[0];;
-
+            // people = new Person[0];
             //CA1825: Avoid unnecessary zero-length array allocations. Use Array.Empty<Person>();
-            people = Array.Empty<Person>(); 
-                                      
+            // people.ToList().Clear();
+            people = Array.Empty<Person>();
+
         }
     }
 }
